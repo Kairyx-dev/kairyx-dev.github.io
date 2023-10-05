@@ -3,7 +3,7 @@ layout: post
 title: '[Android, Kotlin] WindowManager 에 Compose View 붙이기'
 categories: markdown
 tags: [Android, Kotlin, Compose]
-comment: true
+comments: true
 ---
 
 ## 오버레이 팝업
