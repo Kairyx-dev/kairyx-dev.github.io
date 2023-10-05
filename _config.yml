@@ -214,7 +214,7 @@ header_pages:
 
 # Disqus comments
 disqus:
-  shortname: "devkshull-github-io.disqus.com"
+  shortname: "devkshull-github-io"
 
 # Gitment comments
 # gitment:
