@@ -86,19 +86,19 @@ Compose view 를 생성하여 삽입하고 서비스를 실행하면 아래와 �
 
 ```kotlin
 java.lang.IllegalStateException: ViewTreeLifecycleOwner not found from androidx.compose.ui.platform.ComposeView{e2aefdc V.E...... ......I. 0,0-0,0}
-                                                                                                    	at androidx.compose.ui.platform.WindowRecomposer_androidKt.createLifecycleAwareWindowRecomposer(WindowRecomposer.android.kt:352)
-                                                                                                    	at androidx.compose.ui.platform.WindowRecomposer_androidKt.createLifecycleAwareWindowRecomposer$default(WindowRecomposer.android.kt:325)
-                                                                                                    	at androidx.compose.ui.platform.WindowRecomposerFactory$Companion$LifecycleAware$1.createRecomposer(WindowRecomposer.android.kt:168)
-                                                                                                    	at androidx.compose.ui.platform.WindowRecomposerPolicy.createAndInstallWindowRecomposer$ui_release(WindowRecomposer.android.kt:224)
-                                                                                                    	at androidx.compose.ui.platform.WindowRecomposer_androidKt.getWindowRecomposer(WindowRecomposer.android.kt:300)
-                                                                                                    	at androidx.compose.ui.platform.AbstractComposeView.resolveParentCompositionContext(ComposeView.android.kt:244)
-                                                                                                    	at androidx.compose.ui.platform.AbstractComposeView.ensureCompositionCreated(ComposeView.android.kt:251)
-                                                                                                    	at androidx.compose.ui.platform.AbstractComposeView.onAttachedToWindow(ComposeView.android.kt:283)
-                                                                                                    	at android.view.View.dispatchAttachedToWindow(View.java:21291)
-                                                                                                    	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3491)
-                                                                                                    	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:2771)
-                                                                                                    	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:2286)
-                                                                                                    	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:8948)
+    at androidx.compose.ui.platform.WindowRecomposer_androidKt.createLifecycleAwareWindowRecomposer(WindowRecomposer.android.kt:352)
+    at androidx.compose.ui.platform.WindowRecomposer_androidKt.createLifecycleAwareWindowRecomposer$default(WindowRecomposer.android.kt:325)
+    at androidx.compose.ui.platform.WindowRecomposerFactory$Companion$LifecycleAware$1.createRecomposer(WindowRecomposer.android.kt:168)
+    at androidx.compose.ui.platform.WindowRecomposerPolicy.createAndInstallWindowRecomposer$ui_release(WindowRecomposer.android.kt:224)
+    at androidx.compose.ui.platform.WindowRecomposer_androidKt.getWindowRecomposer(WindowRecomposer.android.kt:300)
+    at androidx.compose.ui.platform.AbstractComposeView.resolveParentCompositionContext(ComposeView.android.kt:244)
+    at androidx.compose.ui.platform.AbstractComposeView.ensureCompositionCreated(ComposeView.android.kt:251)
+    at androidx.compose.ui.platform.AbstractComposeView.onAttachedToWindow(ComposeView.android.kt:283)
+    at android.view.View.dispatchAttachedToWindow(View.java:21291)
+    at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3491)
+    at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:2771)
+    at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:2286)
+    at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:8948)
 ```
 
 ### Solve
