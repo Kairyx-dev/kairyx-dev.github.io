@@ -1,6 +1,7 @@
 ---
 layout: about
 title: About
+comments: false
 ---
 
 ## Kshull's dev diary
