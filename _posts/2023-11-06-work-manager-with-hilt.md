@@ -4,6 +4,10 @@ title: '[Android, Kotlin] WorkManager 에 Hilt로 Dependency 주입하기'
 categories: Android
 tags: [Android, Kotlin, WorkManager]
 comments: true
+# banner:
+#     image: "/assets/images/android-chrome-512x512.png"
+#     height: "100vh"
+#     min_height: "38vh"
 ---
 
 안드로이드 버전 12 부터 특정 상황을 제외하고는 Background 에서 Foreground Service 사용이 제한되었고, 
