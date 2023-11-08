@@ -4,8 +4,8 @@ title: '[Android, Kotlin] WorkManager 에 Hilt로 Dependency 주입하기'
 categories: Android
 tags: [Android, Kotlin, WorkManager]
 comments: true
-# banner:
-#     image: "/assets/images/android-chrome-512x512.png"
+banner:
+    image: "/assets/images/banners/workmanager_with_galaxy.png"
 #     height: "100vh"
 #     min_height: "38vh"
 ---

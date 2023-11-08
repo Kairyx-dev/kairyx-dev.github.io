@@ -4,6 +4,10 @@ title: '[Android, Kotlin] WindowManager 에 Compose View 붙이기'
 categories: Android
 tags: [Android, Kotlin, Compose]
 comments: true
+banner:
+    image: "/assets/images/banners/compose_transparent.png"
+    background: "#000"
+    heading_style: "color: #fafafa"
 ---
 
 ## 오버레이 팝업
