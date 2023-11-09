@@ -18,7 +18,7 @@ Android 는 앱이 실행 중 이 아닐 때, 특정 상황에서 팝업을 표�
 
 이 글에선 오버레이 팝업 사용법 이 아닌 WindowManager 에 Compose View 를 붙이는 방법과 ViewTreeLifecycleOwner not found 에러를 해결하는 방법을 소개한다.
 
-해당 기능은 디스플레이 위에 그리기 팝업이 필요하다.
+해당 기능은 디스플레이 위에 그리기 권한이 필요하다.
 
 ## Window Manager 에 View 삽입
 
