@@ -86,7 +86,7 @@ private fun attachView(){
 
 ### ViewTreeLifecycleOwner not found Exception
 
-Compose view 를 생성하여 삽입하고 서비스를 실행하면 아래와 같은 에러가 발생한다.
+Compose view 를 생성하여 삽입하고 서비스를 실행하면 `ViewTreeLifecycleOwner not found` 에러가 발생한다.
 
 ```kotlin
 java.lang.IllegalStateException: ViewTreeLifecycleOwner not found from androidx.compose.ui.platform.ComposeView{e2aefdc V.E...... ......I. 0,0-0,0}
@@ -107,7 +107,7 @@ java.lang.IllegalStateException: ViewTreeLifecycleOwner not found from androidx.
 
 ### Solve
 
-Compose view 에는 lifeCycler Owner 가 필요한데 (일반적으로는 Activity가 그 역할을 함) 현재 없기 때문에 발생하는 에러다.
+Compose view 에는 `lifeCycler Owner` 가 필요한데 (일반적으로는 Activity가 그 역할을 함) 현재 없기 때문에 발생하는 에러다.
 
 우선 LifeCycleOwner class 를 생성한다
 
@@ -146,7 +146,7 @@ class PopupLifeCycleOwner : SavedStateRegistryOwner {
 }
 ```
 
-그리고 Compose view 를 생성했던 부분에서 lifeCycler Owner 와 ViewModelStoreOwner 그리고 Recomposer 를 각각 세팅해 준다.
+그리고 Compose view 를 생성했던 부분에서 `lifeCycler Owner` 와 `ViewModelStoreOwner` 그리고 `Recomposer` 를 각각 세팅해 준다.
 
 ```kotlin
 private fun attachView(){

@@ -10,12 +10,12 @@ banner:
 #     min_height: "38vh"
 ---
 
-안드로이드 버전 12 부터 특정 상황을 제외하고는 Background 에서 Foreground Service 사용이 제한되었고, 
-안드로이드 버전 14 부터 foreground Service를 사용하기 위해선 service type 을 필수로 지정하고 해당 service type을 사용하기 위해서는 권한 설정을 해주어야 작동하도록 변경되었다.
+안드로이드 버전 12 부터 특정 상황을 제외하고는 Background 에서 [Foreground Service][android12] 사용이 제한되었고, 
+안드로이드 버전 14 부터 [Foreground Service][android14]를 사용하기 위해선 service type 을 필수로 지정하고 해당 service type을 사용하기 위해서는 권한 설정을 해주어야 작동하도록 변경되었다.
 
 
 이런 제약과 함께 구글에서는 사용자와의 상호작용이 없는 foreground service 는 workManager 를 사용하도록 권고하고 있으며,
-WorkManager 에서 즉시 실행 Worker 가 업데이트 되면서 대부분의 Backrground 작업은 WorkManager를 사용하는 것이 추천된다.
+WorkManager 에서 즉시 실행 Worker 가 업데이트 되면서 대부분의 Backrground 작업은 [WorkManager][backgroundRecommend]를 사용하는 것이 추천된다.
 
 
 그런 WorkManager를 사용할 때 기존 프로젝트에서 Hilt 라이브러리로 dependency를 주입하고 있는 경우
@@ -45,7 +45,7 @@ class PaymentWorker @AssistedInject constructor(
 }
 ```
 
-기존 Worker 클래스 @HiltWorker annotation 을 추가하고 생성자에 @AssistedInject annotation 을  context 와 workerParams 는 @Assisted annotation 을 달아준다.
+기존 Worker 클래스 `@HiltWorker` annotation 을 추가하고 생성자에 `@AssistedInject` annotation 을  context 와 workerParams 는 `@Assisted` annotation 을 달아준다.
 
 ### Application Class
 ```kotlin
@@ -62,7 +62,7 @@ class GlobalApplication : Application(), Configuration.Provider {
 }
 ```
 
-Application Class 에 (없으면 하나 만들자) Configuration.Provider interface 을 상속 시켜주고 getWorkManagerConfiguration 을 구현해 준다. 
+Application Class 에 (없으면 하나 만들자) `Configuration.Provider` interface 을 상속 시켜주고 `getWorkManagerConfiguration` 을 구현해 준다. 
 
 ### AndroidManifest.xml
 
@@ -72,10 +72,10 @@ Application Class 에 (없으면 하나 만들자) Configuration.Provider interf
 
 ```xml
   <provider
-		  android:name="androidx.startup.InitializationProvider"
-      android:authorities="${applicationId}.androidx-startup"
-      android:exported="false"
-      tools:node="remove">
+    android:name="androidx.startup.InitializationProvider"
+    android:authorities="${applicationId}.androidx-startup"
+    android:exported="false"
+    tools:node="remove">
   </provider>
 ```
 
@@ -101,7 +101,7 @@ Application Class 에 (없으면 하나 만들자) Configuration.Provider interf
 
 ## 주의
 
-SingletonComponent 범위로 지정된 dependency 들 만 inject 할 수 있음
+`SingletonComponent` 범위로 지정된 dependency 들 만 inject 할 수 있음
 
 ### KSP annotation processor를 사용 하는 경우
 
@@ -123,7 +123,7 @@ java.lang.NoSuchMethodException: .worker.PaymentWorker.<init> [class android.con
 Could not create Worker .worker.PaymentWorker
 ```
 
-2023-10-30 기준 hilt-compiler dependency 가 아직 ksp 를 지원하는 정식버전이 release 되지 않아서 지원하지 않는다. 그래도 RC 버전에서  지원 중이니 버전을  1.1.0 rc 버전으로 변경해주면 정상으로 작동한다.
+2023-10-30 기준 hilt-compiler dependency 가 아직 ksp 를 지원하는 정식버전이 release 되지 않아서 지원하지 않는다. 그래도 RC 버전에서  지원 중이니 버전을  `1.1.0 rc` 버전으로 변경해주면 정상으로 작동한다.
 
 ```gradle
 dependencies {
@@ -132,7 +132,7 @@ dependencies {
 }
 ```
 
-+ 추가 2023-11-06 기준 1.1.0 정식 버전이 출시되었다. 해당 버전을 사용하면 된다.
++ 추가 2023-11-06 기준 `1.1.0` 정식 버전이 출시되었다. 해당 버전을 사용하면 된다.
 
 ```gradle
 dependencies {
@@ -143,3 +143,7 @@ dependencies {
 
 ### 참조
 [Android Developers](https://developer.android.com/training/dependency-injection/hilt-jetpack?hl=ko#workmanager)
+
+[android12]: https://developer.android.com/about/versions/12/foreground-services?hl=ko
+[android14]: https://developer.android.com/about/versions/14/changes/fgs-types-required?hl=ko
+[backgroundRecommend]: https://developer.android.com/guide/background?hl=ko
