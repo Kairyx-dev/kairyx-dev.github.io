@@ -52,7 +52,7 @@ class PaymentWorker @AssistedInject constructor(
 @HiltAndroidApp
 class GlobalApplication : Application(), Configuration.Provider {
 
-		@Inject
+	@Inject
     lateinit var workerFactory: HiltWorkerFactory
 
     override fun getWorkManagerConfiguration(): Configuration {
@@ -63,6 +63,24 @@ class GlobalApplication : Application(), Configuration.Provider {
 ```
 
 Application Class 에 (없으면 하나 만들자) `Configuration.Provider` interface 을 상속 시켜주고 `getWorkManagerConfiguration` 을 구현해 준다. 
+
+#### work 2.9.0 버전
+
+2.9.0 버전에서는 `Configuration.Provider` 에 있던 abstract `getWorkManagerConfiguration` 함수가 `workManagerConfiguration` 상수를 지니는 interface 형태로 바뀌었다.
+
+기존 application class 안에 구현했던 getWorkManagerConfiguration 함수를 아래처럼 바꿔준다.
+```kotlin
+@HiltAndroidApp
+class GlobalApplication : Application(), Configuration.Provider {
+
+	@Inject
+    lateinit var workerFactory: HiltWorkerFactory
+
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder().setWorkerFactory(workerFactory).build()
+
+}
+```
 
 ### AndroidManifest.xml
 
