@@ -12,17 +12,18 @@ banner:
 
 ## 오버레이 팝업
 
-Android 는 앱이 실행 중 이 아닐 때, 특정 상황에서 팝업을 표시하기 위해 Foreground Service 와 window manager 를 사용하여 view 를 표시할 수 있다.
+Android 는 앱이 실행 중 이 아닐 때, 특정 상황에서 팝업을 표시하기 위해 Foreground Service 와 window manager 를 사용하여 view 를 표시할 수 있습니다.
 
-예를 들어 전화 수신 시 해당 번호가 스팸 번호인지 팝업으로 알려주는 통화 스팸 앱 처럼 말이다.
+예를 들어 전화 수신 시 해당 번호가 스팸 번호인지 팝업으로 알려주는 통화 스팸 앱 처럼.
 
-이 글에선 오버레이 팝업 사용법 이 아닌 WindowManager 에 Compose View 를 붙이는 방법과 ViewTreeLifecycleOwner not found 에러를 해결하는 방법을 소개한다.
+이 글에선 오버레이 팝업 사용법 이 아닌 `WindowManager` 에 `Compose View` 를 붙이는 방법과 `ViewTreeLifecycleOwner not found` 에러를 해결하는 방법을 소개합니다.
 
-해당 기능은 디스플레이 위에 그리기 권한이 필요하다.
+해당 기능은 디스플레이 위에 그리기 권한이 필요합니다.
 
 ## Window Manager 에 View 삽입
 
-Android view 를 사용할 때 Foreground service 에서 popup을 붙일때는 사용 할 view 를 inflate 하고 layou params 와 함께 add view 하여 간단히 표시 할 수 있다.
+Android view 를 사용할 때 `Foreground service` 에서 popup을 붙일때는 사용 할 view 를 
+inflate 하고 layou params 와 함께 `WindowManager` 에 add view 하여 간단히 표시 할 수 있습니다.
 
 ```kotlin
 private fun attachView(){
@@ -52,7 +53,7 @@ private fun attachView(){
 
 ### Compose View 생성
 
-Compose UI 를 사용하는 kotlin 프로젝트에서도 똑같이 Compose View 를 만들어서 삽입해 보자
+`Compose UI` 를 사용하는 kotlin 프로젝트에서도 똑같이 `Compose View` 를 만들어서 삽입할 수 있습니다.
 
 ```kotlin
 private fun attachView(){
@@ -86,7 +87,7 @@ private fun attachView(){
 
 ### ViewTreeLifecycleOwner not found Exception
 
-Compose view 를 생성하여 삽입하고 서비스를 실행하면 `ViewTreeLifecycleOwner not found` 에러가 발생한다.
+하지만 `Compose view` 를 생성하여 삽입하고 서비스를 실행하면 `ViewTreeLifecycleOwner not found` 에러가 발생합니다.
 
 ```kotlin
 java.lang.IllegalStateException: ViewTreeLifecycleOwner not found from androidx.compose.ui.platform.ComposeView{e2aefdc V.E...... ......I. 0,0-0,0}
@@ -107,9 +108,9 @@ java.lang.IllegalStateException: ViewTreeLifecycleOwner not found from androidx.
 
 ### Solve
 
-Compose view 에는 `lifeCycler Owner` 가 필요한데 (일반적으로는 Activity가 그 역할을 함) 현재 없기 때문에 발생하는 에러다.
+`Compose view` 에는 `lifeCycler Owner` 가 필요한데 (일반적으로는 Activity가 그 역할을 함) 현재 없기 때문에 발생하는 에러입니다.
 
-우선 LifeCycleOwner class 를 생성한다
+우선 LifeCycleOwner class 를 생성해 줍니다.
 
 ```kotlin
 class PopupLifeCycleOwner : SavedStateRegistryOwner {
@@ -146,7 +147,7 @@ class PopupLifeCycleOwner : SavedStateRegistryOwner {
 }
 ```
 
-그리고 Compose view 를 생성했던 부분에서 `lifeCycler Owner` 와 `ViewModelStoreOwner` 그리고 `Recomposer` 를 각각 세팅해 준다.
+그리고 Compose view 를 생성했던 부분에서 `lifeCycler Owner` 와 `ViewModelStoreOwner` 그리고 `Recomposer` 를 각각 세팅해 줍니다.
 
 ```kotlin
 private fun attachView(){
