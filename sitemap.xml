@@ -1,11 +1,16 @@
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://devkshull.github.io/android/2023/09/25/Attach-compose-view-in-window-manager.html</loc>
-<lastmod>2023-09-25T00:00:00+00:00</lastmod>
+<lastmod>2023-09-25T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>https://devkshull.github.io/android/2023/11/06/work-manager-with-hilt.html</loc>
-<lastmod>2023-11-06T00:00:00+00:00</lastmod>
+<lastmod>2023-11-06T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://devkshull.github.io/android/2024/01/10/android-compat-classes.html</loc>
+<lastmod>2024-01-10T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>https://devkshull.github.io/about.html</loc>
@@ -27,6 +32,6 @@
 </url>
 <url>
 <loc>https://devkshull.github.io/google47b7fc78bab5edac.html</loc>
-<lastmod>2023-11-08T06:43:51+00:00</lastmod>
+<lastmod>2023-12-19T00:25:52+09:00</lastmod>
 </url>
 </urlset>
