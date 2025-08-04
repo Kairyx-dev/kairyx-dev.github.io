@@ -24,9 +24,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Kshull 개발 일기
+title: Kairyx의 개발 일기
 email: rhkstn0303@naver.com
-author: devKShull
+author: Kairyx
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -43,11 +43,11 @@ author: devKShull
 copyright: "Published Work (cleft) 2017-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Kshull's dev diary, Android & iOS 개발 issue 블로그
+  Kairyx's dev diary, Android & Kotlin / java 개발 issue 블로그
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://devkshull.github.io" # the base hostname & protocol for your site, e.g. https://example.com
-favicon: "/assets/images/favicon.ico" # the favicon for your site
+url: "https://kairyx-dev.github.io" # the base hostname & protocol for your site, e.g. https://example.com
+favicon: "/assets/images/kairyx-favicon.png" # the favicon for your site
 
 # Yat date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this

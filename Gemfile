@@ -5,3 +5,5 @@ gemspec
 
 gem "webrick", "~> 1.8"
 gem "kramdown-parser-gfm"
+gem "bigdecimal"
+gem "logger"

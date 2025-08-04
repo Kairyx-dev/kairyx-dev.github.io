@@ -5,7 +5,7 @@ categories: Android
 tags: [Android, Kotlin]
 comments: true
 banner:
-    # image: "/assets/images/banners/workmanager_with_galaxy.png"
+     image: "/assets/images/default_android_banner.png"
 ---
 ## Compat class 가 무엇인가요?
 
