@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://devkshull.github.io/sitemap.xml
+Sitemap: https://kairyx-dev.github.io/sitemap.xml
