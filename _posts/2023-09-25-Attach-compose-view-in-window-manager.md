@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[Android, Kotlin] WindowManager 에 Compose View 붙이기'
-categories: Android
+categories: [Android]
 tags: [Android, Kotlin, Compose]
 comments: true
 banner:

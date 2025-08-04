@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[Android, Kotlin] Android의 Compat 클래스들'
-categories: Android
+categories: [Android]
 tags: [Android, Kotlin]
 comments: true
 banner:
